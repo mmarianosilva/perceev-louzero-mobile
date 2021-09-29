@@ -1,3 +1,3 @@
 -- In order to run your Flutter App. <br/>
--- cd into directory of project <br/>
+-- cd into directory of project lou_zero_mobile <br/>
 -- flutter run <br/>
