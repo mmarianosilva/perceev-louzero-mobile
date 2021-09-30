@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'package:appcenter/appcenter.dart';
+import 'package:appcenter_analytics/appcenter_analytics.dart';
+import 'package:appcenter_crashes/appcenter_crashes.dart';
+import 'package:flutter/foundation.dart';
+
 void main() {
+  initAppCenter();
   runApp(const MyApp());
+}
+
+void initAppCenter() async {
+  final ios = defaultTargetPlatform == TargetPlatform.iOS;
+  var app_secret = ios
+      ? "3a0cf117-b3d9-49b7-aae9-0c13dbc57316"
+      : "2bfa1527-5bfa-41d8-9105-fa7e23d2bd75";
+
+  await AppCenter.start(
+      app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
 }
 
 class MyApp extends StatelessWidget {
@@ -31,6 +47,16 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  void initAppCenter() async {
+    final ios = defaultTargetPlatform == TargetPlatform.iOS;
+    var app_secret = ios
+        ? "123cfac9-123b-123a-123f-123273416a48"
+        : "96781fae-f8e4-4114-98c3-51e7c52c8d53";
+
+    await AppCenter.start(
+        app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
+  }
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
