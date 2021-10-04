@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: apk-release
-          path: app/build/output/apk/debug/app-debug.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
   # beta_ios:
   #   name: Upload iOS Beta to Firebase App Distribution
   #   needs: [ios]
@@ -81,4 +81,4 @@ jobs:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           group: testers
-          file: app/build/output/apk/debug/app-debug.apk
+          file: build/app/outputs/flutter-apk/app-release.apk
