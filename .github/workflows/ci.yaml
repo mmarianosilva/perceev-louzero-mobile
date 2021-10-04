@@ -39,11 +39,13 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
-      - run: flutter build apk --debug
-      - uses: ncipollo/release-action@v1
+      - run: flutter build apk --debug --split-per-abi
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/flutter-apk/debug/*.apk"
-          token: $
+          artifacts: "build/app/outputs/flutter-apk/debug/"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}
   beta_ios:
     name: Upload iOS Beta to Firebase App Distribution
     needs: [ios]
