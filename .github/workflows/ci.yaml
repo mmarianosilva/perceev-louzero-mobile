@@ -15,7 +15,6 @@ jobs:
         run: |
           source devprofile.sh 
 
-          echo $BUILD_PROVISION_PROFILE_BASE64;
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
@@ -37,6 +36,8 @@ jobs:
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+
+          echo "imported identity"
       - uses: actions/setup-java@v2
         with:
           java-version: '11'
