@@ -18,6 +18,11 @@ jobs:
       - run: flutter analyze
       - run: flutter test
       - run: flutter build ios --release --no-codesign
+      - name: Upload IPA
+        uses: actions/upload-artifact@master
+        with:
+          name: ios-build
+          path: build/ios/iphoneos
   android:
     name: flutter apk build
     runs-on: ubuntu-latest
@@ -39,27 +44,27 @@ jobs:
         with:
           name: apk-release
           path: build/app/outputs/flutter-apk/app-release.apk
-  # beta_ios:
-  #   name: Upload iOS Beta to Firebase App Distribution
-  #   needs: [ios]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - name: set up JDK 1.8
-  #       uses: actions/setup-java@v1
-  #       with:
-  #         java-version: 1.8
-  #     - name: Download Artifact
-  #       uses: actions/download-artifact@main
-  #       with:
-  #         name: ios-build
-  #     - name: Upload IPA
-  #       uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
-  #       with:
-  #         appId: ${{secrets.FIREBASE_APPLE_APPID}}
-  #         token: ${{secrets.FIREBASE_TOKEN}}
-  #         group: testers
-  #         file: Runner.ipa
+  beta_ios:
+    name: Upload iOS Beta to Firebase App Distribution
+    needs: [ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Download Artifact
+        uses: actions/download-artifact@main
+        with:
+          name: ios-build
+      - name: Upload IPA
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
+        with:
+          appId: ${{secrets.FIREBASE_APPLE_APPID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          group: Testers
+          file: Runner.ipa
   beta_apk:
     name: Upload Android Beta to Firebase App Distribution
     needs: [android]
@@ -80,5 +85,5 @@ jobs:
         with:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
-          group: testers
+          group: Testers
           file: build/app/outputs/flutter-apk/app-release.apk
