@@ -21,7 +21,7 @@ jobs:
       - run: flutter test
       - run: flutter build ios --release --no-codesign
       - run: mkdir Payload
-      - run: mv build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app ./Payload
+      - run: mv build/ios/iphoneos/Runner.app ./Payload
       - run: zip -r Payload.zip Payload
       - run: mv Payload.zip louZero.ipa
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
