@@ -71,7 +71,6 @@ jobs:
     - run: flutter pub get
     - run: flutter analyze
     - run: flutter test
-    - run: flutter build apk --release
     - name: Build Signed APK
       uses: victorbnl/build-signed-apk@main
       with:
