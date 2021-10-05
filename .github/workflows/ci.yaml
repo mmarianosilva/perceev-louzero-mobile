@@ -33,7 +33,7 @@ jobs:
     - run: flutter pub get
     - run: flutter analyze
     - run: flutter test
-    - run: flutter build apk 
+    - run: flutter build apk --debug 
   web:
     name: flutter web build
     runs-on: ubuntu-latest
