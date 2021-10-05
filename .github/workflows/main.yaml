@@ -72,6 +72,13 @@ jobs:
     - run: flutter analyze
     - run: flutter test
     - run: flutter build apk --release
+    - name: Build Signed APK
+      uses: victorbnl/build-signed-apk@main
+      with:
+        keystore: ${{ secrets.APK_KEYSTORE_BASE64 }}
+        keystore_password: ${{ secrets.APK_KEYSTORE_PASSWORD }}
+        key_alias: ${{ secrets.APK_KEY_ALIAS }}
+        key_password: ${{ secrets.APK_KEY_PASSWORD }}
     - uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
       with:
         appId: ${{secrets.FIREBASE_ANDROID_APPID}}
