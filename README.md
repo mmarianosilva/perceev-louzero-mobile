@@ -1,4 +1,4 @@
-# lou_zero_mobile
+# louzero
 
 A new Flutter project.
 

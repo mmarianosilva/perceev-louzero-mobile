@@ -1,4 +1,4 @@
-package com.example.lou_zero_mobile
+package com.example.louzero
 
 import io.flutter.embedding.android.FlutterActivity
 
