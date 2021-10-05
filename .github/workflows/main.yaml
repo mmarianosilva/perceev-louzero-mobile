@@ -93,12 +93,6 @@ jobs:
         name: louZero.apk
     - name: Display structure of downloaded files
       run: ls 
-    - uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
-      with:
-        appId: ${{secrets.FIREBASE_ANDROID_APPID}}
-        token: ${{secrets.FIREBASE_TOKEN}}
-        groups: Testers
-        file: app-release.apk
   distribute-ios:
     name: Distribute ios build
     runs-on: ubuntu-latest  
