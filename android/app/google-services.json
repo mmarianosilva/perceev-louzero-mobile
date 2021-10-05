@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "85174181615",
-    "project_id": "louzero",
-    "storage_bucket": "louzero.appspot.com"
+    "project_number": "983955052574",
+    "project_id": "louzero-3cbe4",
+    "storage_bucket": "louzero-3cbe4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:85174181615:android:f34b143465b7b8e06ec51a",
+        "mobilesdk_app_id": "1:983955052574:android:0c961f68e6e9465f84f60f",
         "android_client_info": {
-          "package_name": "com.singlemindconsulting.lou_zero_mobile"
+          "package_name": "com.singlemindconsulting.louzero"
         }
       },
       "oauth_client": [
         {
-          "client_id": "85174181615-j7ispgspv5fq4cmcvpkqdakvvivobc83.apps.googleusercontent.com",
+          "client_id": "983955052574-nc20qs13ni1v2u4jois2kr68ptk15dhu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDA70YWrFVdIyxfVNnGdIRo6IY4q9qVvBY"
+          "current_key": "AIzaSyCno0arACa-OzszJILKi-A_r5-3hgOIBgc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "85174181615-j7ispgspv5fq4cmcvpkqdakvvivobc83.apps.googleusercontent.com",
+              "client_id": "983955052574-nc20qs13ni1v2u4jois2kr68ptk15dhu.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "983955052574-i5ckn7s08fkclqojskqq197bcjqph8q3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.singlemindconsulting.louzero"
+              }
             }
           ]
         }
