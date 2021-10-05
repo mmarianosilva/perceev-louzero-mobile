@@ -20,11 +20,15 @@ jobs:
       - run: flutter analyze
       - run: flutter test
       - run: flutter build ipa
+      - run: mkdir Payload
+      - run: mv build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app ./Payload
+      - run: zip -r Payload.zip Payload
+      - run: mv Payload.zip louZero.ipa
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.0.0
         with:
           appId: ${{secrets.FIREBASE_APPLE_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
-          file: build/app/outputs/flutter-apk/app-release.ap
+          file: louZero.ipa
   android:
     name: flutter apk build
     runs-on: ubuntu-latest
