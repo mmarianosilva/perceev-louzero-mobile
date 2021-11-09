@@ -1,6 +1,0 @@
-{
-  "deepscan.enable": true,
-  "dart.previewFlutterUiGuides": true,
-  "dart.previewFlutterUiGuidesCustomTracking": true,
-  "dart.previewHotReloadOnSaveWatcher": true
-}
